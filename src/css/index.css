@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    background: #F0F0F0;
+    font-family: Noto-Sans, sans-serif;
+}
+
+div {
+    padding-top: 50pt;
+    text-align: center;
+    vertical-align: center;
+}
+
+.form-field {
+    width: 150pt;
+    margin: 5pt;
+    padding: 10pt;
+    font-family: Noto-Sans, sans-serif;
+    border: 1pt solid gray;
+}
+
+.form-error {
+    border: 1pt solid #D31017;
+}
+
+.form-button {
+    margin: 5pt;
+    width: 150pt;
+    text-align: center;
+    display: inline-block;
+    border-radius: 0;
+}
+
+.error-message {
+    font-size: 10pt;
+    color: #D31017;
+}

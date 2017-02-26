@@ -1,0 +1,76 @@
+/* Font */
+
+@font-face {
+    font-family: "Noto-Sans";
+    src: url('NotoSansUI-Regular.ttf');
+}
+
+/* Buttons */
+
+.button {
+    padding: 7pt;
+    display: inline-flex;
+    color: #FFFFFF;
+    border: 1pt solid;
+    align-items: center;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+/* Button colors */
+
+.green-button {
+    background: linear-gradient(#43B743, #379637);
+    border-color: #297029;
+}
+
+.green-button:hover {
+    background: linear-gradient(#379637, #43B743);
+}
+
+.blue-button {
+    background: linear-gradient(#3A84D1, #3170AF);
+    border-color: #275B8E;
+}
+
+.blue-button:hover {
+    background: linear-gradient(#3170AF, #3A84D1);
+}
+
+.red-button {
+    background: linear-gradient(#D31017, #910B10);
+    border-color: #5B070B;
+}
+
+.red-button:hover {
+    background: linear-gradient(#910B10, #D31017);
+    border-color: #5B070B;
+}
+
+/* Button sizes */
+
+.small-button {
+    padding: 4pt;
+}
+
+.small-button-img {
+    padding-right: 2pt;
+}
+
+.medium-button {
+    padding: 8pt;
+}
+
+.medium-button-img {
+    padding-right: 4pt;
+}
+
+.large-button {
+    padding: 12pt;
+}
+
+.large-button-img {
+    padding-right: 6pt;
+}
