@@ -150,6 +150,21 @@ body {
     text-align: center;
 }
 
+.notifications-panel {
+    margin: 0;
+    padding: 0;
+    right: 85pt;
+    width: 300pt;
+    height: 60%;
+    z-index: 1;
+    overflow: auto;
+    background: white;
+    position: absolute;
+    align-items: center;
+    border: 1pt solid gray;
+    border-top: none;
+}
+
 .project-navbar {
     height: 33pt;
     width: 100%;
@@ -271,6 +286,47 @@ body {
     align-items: center;
     background: linear-gradient(#3A84D1, #3170AF);
     border-color: #275B8E;
+}
+
+.notifications-div {
+    padding: 3pt;
+    height: 16pt;
+    min-width: 16pt;
+    border: none;
+    display: block;
+    text-align: center;
+    align-items: center;
+    border-radius: 12pt;
+    background: linear-gradient(#090909, #222222);
+}
+
+.notifications-div-highlight {
+    background: linear-gradient(#BF0B11, #EE1017);
+}
+
+.notifications-div:hover {
+    cursor: pointer;
+    background: linear-gradient(#EE1017, #BF0B11);
+}
+
+.notifications-div b {
+    width: 95%;
+}
+
+.notifications-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.notifications-table td {
+    padding: 10pt;
+    background: #EEEEEE;
+    border-top: 1pt solid gray;
+}
+
+.notifications-table td:hover {
+    cursor: pointer;
+    background: #DDDDDD;
 }
 
 .logout-div {

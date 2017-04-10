@@ -54,7 +54,7 @@
                     </button>
                 </div>
                 <h1>Assign Task</h1>
-                <h3>Assign user to task:</h3>
+                <h3>Assign task to user:</h3>
                 <h3 id="assign-task-name"></h3>
                 <form>
                     <input class="form-field" title="User" name="user" list="assignable-users">
@@ -95,8 +95,7 @@
                 <h1>Delete Task</h1>
                 <h2>Are you sure you want do delete task:</h2>
                 <h2 id="delete-task-name"></h2>
-                <input type="button" class="button red-button medium-button form-button" value="Delete Task"
-                       onclick="">
+                <input type="button" class="button red-button medium-button form-button" value="Delete Task" onclick="">
             </div>
         </div>
         <table class="body-table">
@@ -107,7 +106,7 @@
                             <td>
                                 <div>
                                     <div style='padding-left: 10pt;'><img height="16" src="img/user.svg"/></div>
-                                    <div style='padding-left: 10pt; padding-right: 10pt;'>Welcome, &lt;name&gt;</div>
+                                    <div id="user-login-text" style='padding-left: 10pt; padding-right: 10pt;'></div>
                                     <div class="nav-button-selected">Projects</div>
                                     <div class="nav-button">Settings</div>
                                     <div class="nav-button">Manage</div>
@@ -115,6 +114,9 @@
                             </td>
                             <td align="right">
                                 <div>
+                                    <div style='padding-right: 10pt;'>
+                                        <div class="notifications-div notifications-div-highlight"><b>0</b></div>
+                                    </div>
                                     <div class="logout-div">
                                         <div style='padding-right: 10pt;'>Logout</div>
                                         <div><img height="16" src="img/logout.svg"/></div>
@@ -140,6 +142,39 @@
                     </div>
                 </td>
                 <td class="project-panel" valign="top">
+                    <div class="notifications-panel">
+                        <div>
+                            <h4 style="padding-left: 10pt">NOTIFICATIONS</h4>
+                            <table class="notifications-table">
+                                <tr>
+                                    <td>user1 commented on task54</td>
+                                </tr>
+                                <tr>
+                                    <td>task553 assigned to you</td>
+                                </tr>
+                                <tr>
+                                    <td>user1 commented on task54</td>
+                                </tr>
+                                <tr>
+                                    <td>task553 assigned to you</td>
+                                </tr>
+                                <tr>
+                                    <td>user1 commented on task54</td>
+                                </tr>
+                                <tr>
+                                    <td>task553 assigned to you</td>
+                                </tr>
+                                <tr>
+                                    <td>notification with long long long long long long long long long long
+                                        long long long long long long long long long long text
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>task553 assigned to you</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                     <div id="no-project" class="no-selected-project-div">
                         <div>
                             <h2>NO PROJECT SELECTED</h2>
@@ -150,11 +185,13 @@
                             <div id="overview-tab" class=selected-project-tab onclick="showOverviewTab();">
                                 Overview
                             </div>
-                            <div id="tasks-tab" class="project-tab" onclick="showTasksTab();">Tasks</div>
+                            <div id="tasks-tab" class="project-tab" onclick="showTasksTab();">
+                                Tasks
+                            </div>
                         </div>
                         <div id="overview-panel">
-                            <h1 id="project-name">name</h1>
-                            <p id="project-description">description</p>
+                            <h1 id="project-name"></h1>
+                            <p id="project-description"></p>
                             <h3>INVOLVED USERS</h3>
                             <div class="task-buttons">
                                 <button class="button green-button small-button">
