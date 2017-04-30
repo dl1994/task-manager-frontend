@@ -3,6 +3,7 @@
 <html>
     <head>
         <%@ include file="partial/head-includes.html" %>
+        <script src="js/settings.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="css/settings.css"/>
         <title>Settings</title>
     </head>

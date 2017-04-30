@@ -6,6 +6,7 @@ var doneTasks = [];
 var currentProject = null;
 
 initializer.successCallback = loadProjects;
+$(document).ready(selectButtonOnLoad("#nav-projects"));
 
 function fillUsersTable() {
     var table = $("#project-users");

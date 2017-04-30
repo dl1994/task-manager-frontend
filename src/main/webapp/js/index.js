@@ -13,7 +13,7 @@ function login() {
         if (response.status === 401) {
             var fields = $(".form-field");
 
-            if (!fields.hasClass(".form-error")) {
+            if (!fields.hasClass("form-error")) {
                 fields.addClass("form-error");
             }
 

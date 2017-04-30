@@ -9,7 +9,7 @@
     background: linear-gradient(#333333, #191919);
 }
 
-.navbar div {
+.navbar-contents {
     display: inline-flex;
     align-items: center;
 }
@@ -22,7 +22,6 @@
 
 .nav-button {
     padding: 10pt;
-    display: inline-flex;
     align-items: center;
 }
 
@@ -34,7 +33,6 @@
 
 .nav-button-selected {
     padding: 10pt;
-    display: inline-flex;
     align-items: center;
     background: linear-gradient(#3A84D1, #3170AF);
     border-color: #275B8E;
