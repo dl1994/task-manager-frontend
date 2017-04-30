@@ -1,32 +1,11 @@
 var projects = {};
 var users = [];
-var loggedInUser = {};
 var inProgressTasks = [];
 var newTasks = [];
 var doneTasks = [];
 var currentProject = null;
 
-function initialize() {
-    loadLoggedInUser();
-
-    // TODO check if user is logged in
-    $("#user-login-text").text("Welcome, " + loggedInUser.firstName + " " + loggedInUser.lastName);
-
-    loadProjects();
-}
-
-window.onload = initialize;
-
-function loadLoggedInUser() {
-    // TODO load from backend
-    loggedInUser = {
-        id: 11,
-        username: "user1",
-        firstName: "User",
-        lastName: "Test",
-        role: "ROLE_ADMIN"
-    };
-}
+initializer.successCallback = loadProjects;
 
 function fillUsersTable() {
     var table = $("#project-users");

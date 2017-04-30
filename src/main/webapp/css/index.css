@@ -1,9 +1,3 @@
-body {
-    margin: 0;
-    background: #F0F0F0;
-    font-family: Noto-Sans, sans-serif;
-}
-
 div {
     padding-top: 50pt;
     text-align: center;
@@ -19,7 +13,7 @@ div {
 }
 
 .form-error {
-    border: 1pt solid #D31017;
+    border: 1px solid #D31017;
 }
 
 .form-button {

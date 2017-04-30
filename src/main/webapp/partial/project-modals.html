@@ -1,0 +1,78 @@
+<div id="new-project-modal" class="modal" hidden>
+    <div class="modal-div">
+        <div class="left-div">
+            <button class="button red-button small-button" title="Close" onclick="hideModal('#new-project-modal');">
+                <img height="12" src="img/delete.svg" alt="Close"/>
+            </button>
+        </div>
+        <h1>New Project</h1>
+        <form action="javascript:void(0);">
+            <input type="text" class="form-field" name="project" placeholder="Project Name"/><br/>
+            <input type="button" class="button green-button medium-button form-button" value="Create Project" onclick=""/>
+        </form>
+    </div>
+</div>
+<div id="new-task-modal" class="modal" hidden>
+    <div class="modal-div">
+        <div class="left-div">
+            <button class="button red-button small-button" title="Close" onclick="hideModal('#new-task-modal');">
+                <img height="12" src="img/delete.svg" alt="Close"/>
+            </button>
+        </div>
+        <h1>New Task</h1>
+        <form action="javascript:void(0);">
+            <input type="text" class="form-field" name="subject" placeholder="Subject"/><br/>
+            <input type="text" class="form-field" name="due" placeholder="Due Date"/><br/>
+            <input type="text" class="form-field" name="priority" placeholder="Priority"/><br/>
+            <input type="button" class="button green-button medium-button form-button" value="Create Task" onclick=""/>
+        </form>
+    </div>
+</div>
+<div id="assign-task-modal" class="modal" hidden>
+    <div class="modal-div">
+        <div class="left-div">
+            <button class="button red-button small-button" title="Close" onclick="hideModal('#assign-task-modal');">
+                <img height="12" src="img/delete.svg" alt="Close"/>
+            </button>
+        </div>
+        <h1>Assign Task</h1>
+        <h3>Assign task to user:</h3>
+        <h3 id="assign-task-name"></h3>
+        <form action="javascript:void(0);">
+            <input class="form-field" title="User" name="user" list="assignable-users"/>
+            <datalist id="assignable-users">
+            </datalist>
+            <br/>
+            <input type="button" class="button blue-button medium-button form-button" value="Assign Task" onclick=""/>
+        </form>
+    </div>
+</div>
+<div id="edit-task-modal" class="modal" hidden>
+    <div class="modal-div">
+        <div class="left-div">
+            <button class="button red-button small-button" title="Close" onclick="hideModal('#edit-task-modal');">
+                <img height="12" src="img/delete.svg" alt="Close"/>
+            </button>
+        </div>
+        <h1>Edit Task</h1>
+        <form action="javascript:void(0);">
+            <input id="task-subject" type="text" class="form-field" name="subject" placeholder="Subject"/><br/>
+            <input id="task-due" type="text" class="form-field" name="due" placeholder="Due Date"/><br/>
+            <input id="task-priority" type="text" class="form-field" name="priority" placeholder="Priority"/><br/>
+            <input type="button" class="button blue-button medium-button form-button" value="Update Task" onclick=""/>
+        </form>
+    </div>
+</div>
+<div id="delete-task-modal" class="modal" hidden>
+    <div class="modal-div">
+        <div class="left-div">
+            <button class="button red-button small-button" title="Close" onclick="hideModal('#delete-task-modal');">
+                <img height="12" src="img/delete.svg" alt="Close"/>
+            </button>
+        </div>
+        <h1>Delete Task</h1>
+        <h2>Are you sure you want do delete task:</h2>
+        <h2 id="delete-task-name"></h2>
+        <input type="button" class="button red-button medium-button form-button" value="Delete Task" onclick=""/>
+    </div>
+</div>

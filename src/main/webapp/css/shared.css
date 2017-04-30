@@ -2,7 +2,20 @@
 
 @font-face {
     font-family: "Noto-Sans";
-    src: url('NotoSansUI-Regular.ttf');
+    src: url('../res/NotoSansUI-Regular.ttf');
+}
+
+/* General */
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background: #F0F0F0;
+    font-family: Noto-Sans, sans-serif;
 }
 
 /* Buttons */
@@ -11,7 +24,7 @@
     padding: 7pt;
     display: inline-flex;
     color: #FFFFFF;
-    border: 1pt solid;
+    border: 1px solid;
     align-items: center;
 }
 
@@ -73,4 +86,14 @@
 
 .large-button-img {
     padding-right: 6pt;
+}
+
+/* Padding */
+
+.left-pad-10 {
+    padding-left: 10pt;
+}
+
+.right-pad-10 {
+    padding-right: 10pt;
 }
