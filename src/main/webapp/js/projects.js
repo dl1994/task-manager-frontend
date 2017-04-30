@@ -19,7 +19,7 @@ function fillUsersTable() {
     for (var i = 0; i < users.length; i++) {
         var user = users[i];
 
-        table.append('<tr class=' + (i % 2 == 0 ? '"light-row"' : '"dark-row"') + '>' +
+        table.append('<tr class=' + (i % 2 === 0 ? '"light-row"' : '"dark-row"') + '>' +
             '<td>' + user.firstName + ' ' + user.lastName + '</td>' +
             '<td>' +
             '<button class="button red-button small-button" title="Delete task" ' +
@@ -38,7 +38,7 @@ function loadUsers(projectId) {
     projectUsers.empty();
 
     // TODO load from backend
-    if (projectId == "1") {
+    if (projectId === "1") {
         users = [{
             id: 11,
             username: "user1",
@@ -56,7 +56,7 @@ function loadUsers(projectId) {
         users = [];
     }
 
-    if (users.length == 0) {
+    if (users.length === 0) {
         projectUsers.hide();
         usersText.show();
     } else {
@@ -112,7 +112,7 @@ function fillTaskTable(tableIdentifier, tasks, util) {
     for (var i = 0; i < tasks.length; i++) {
         var task = tasks[i];
 
-        table.append('<tr class=' + (i % 2 == 0 ? '"light-row"' : '"dark-row"') + '>' +
+        table.append('<tr class=' + (i % 2 === 0 ? '"light-row"' : '"dark-row"') + '>' +
             '<td>#' + task.id + '</td>' +
             '<td>' +
             '<div class="priority-div">' +
@@ -182,24 +182,24 @@ function loadTasks(projectId) {
         doneTasks = [];
     }
 
-    if (inProgressTasks.length == 0 && newTasks.length == 0 && doneTasks.length == 0) {
+    if (inProgressTasks.length === 0 && newTasks.length === 0 && doneTasks.length === 0) {
         showNoTasks();
     } else {
-        if (inProgressTasks.length == 0) {
+        if (inProgressTasks.length === 0) {
             $("#in-progress-text").show();
         } else {
             $("#in-progress-text").hide();
             fillTaskTable("#in-progress-tasks", inProgressTasks, inProgressTasksUtil);
         }
 
-        if (newTasks.length == 0) {
+        if (newTasks.length === 0) {
             $("#new-text").show();
         } else {
             $("#new-text").hide();
             fillTaskTable("#new-tasks", newTasks, newTasksUtil);
         }
 
-        if (doneTasks.length == 0) {
+        if (doneTasks.length === 0) {
             $("#done-text").show();
         } else {
             $("#done-text").hide();
@@ -256,7 +256,7 @@ function prioritySpans(value, max) {
 }
 
 function toString(string) {
-    if (string == null) {
+    if (string === null) {
         return "-";
     } else {
         return string;
@@ -264,7 +264,7 @@ function toString(string) {
 }
 
 function toDate(string) {
-    if (string == null) {
+    if (string === null) {
         return "-";
     } else {
         var date = new Date(string);
@@ -276,7 +276,7 @@ function toDate(string) {
 var inProgressTasksUtil = {
     firstField: "Started",
     secondField: "Due",
-    filler: function (task, taskIndex) {
+    filler: function(task, taskIndex) {
         return '<td>' + toDate(task.startedTimestamp) + '</td>' +
             '<td>' + toDate(task.dueTimestamp) + '</td>' +
             '<td>' +
@@ -303,7 +303,7 @@ var inProgressTasksUtil = {
 var newTasksUtil = {
     firstField: "Created",
     secondField: "Due",
-    filler: function (task, taskIndex) {
+    filler: function(task, taskIndex) {
         return '<td>' + toDate(task.createdTimestamp) + '</td>' +
             '<td>' + toDate(task.dueTimestamp) + '</td>' +
             '<td>' +
@@ -329,7 +329,7 @@ var newTasksUtil = {
 var doneTasksUtil = {
     firstField: "Started",
     secondField: "Finished",
-    filler: function (task, taskIndex) {
+    filler: function(task, taskIndex) {
         return '<td>' + toDate(task.startedTimestamp) + '</td>' +
             '<td>' + toDate(task.finishedTimestamp) + '</td>' +
             '<td>' +
@@ -343,10 +343,6 @@ var doneTasksUtil = {
             '</td>';
     }
 };
-
-function showModal(id) {
-    $(id).show();
-}
 
 function showAssignModal(task) {
     var dataList = $("#assignable-users");
@@ -403,12 +399,8 @@ function showDeleteModalDone(taskIndex) {
     showDeleteModal(doneTasks[taskIndex]);
 }
 
-function hideModal(id) {
-    $(id).hide();
-}
-
 function selectProject(projectId) {
-    if (currentProject == projectId) {
+    if (currentProject === projectId) {
         return;
     }
 

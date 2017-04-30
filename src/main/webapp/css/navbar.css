@@ -50,15 +50,16 @@
     background: linear-gradient(#090909, #222222);
 }
 
-.notifications-div b {
-    width: 95%;
+.notifications-div:hover {
+    cursor: pointer;
+    background: linear-gradient(#43B743, #379637);
 }
 
 .notifications-div-highlight {
     background: linear-gradient(#BF0B11, #EE1017);
 }
 
-.notifications-div:hover {
+.notifications-div-highlight:hover {
     cursor: pointer;
     background: linear-gradient(#EE1017, #BF0B11);
 }

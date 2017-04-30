@@ -1,15 +1,15 @@
 var me = {};
 var selectedButton = {
-    hasClass: function () {
+    hasClass: function() {
         return false;
     }, addClass: function() {}
 };
 var initializer = {
-    successCallback: function () {}
+    successCallback: function() {}
 };
 
 function initialize() {
-    $.get(BACKEND_PATH + "/users/me", {}, function (data) {
+    $.get(BACKEND_PATH + "/users/me", {}, function(data) {
         me = data;
 
         if (me.role === "ROLE_ADMIN") {
@@ -19,7 +19,7 @@ function initialize() {
         $("#user-login-text").text("Welcome, " + me.firstName + " " + me.lastName);
         // TODO load notifications
         initializer.successCallback();
-    }).fail(function (response) {
+    }).fail(function(response) {
         if (response.status === 401) {
             window.location.href = ROUTES["login"];
         }
@@ -27,10 +27,10 @@ function initialize() {
 }
 
 function logout() {
-    $.get(BACKEND_PATH + "/logout", {}, function () {
+    $.get(BACKEND_PATH + "/logout", {}, function() {
         me = {};
         window.location.href = ROUTES["login"];
-    }).fail(function () {
+    }).fail(function() {
         // TODO show logout error
     });
 }
@@ -51,7 +51,7 @@ function selectButton(navButtonId) {
 }
 
 function selectButtonOnLoad(navButtonId) {
-    return function () {
+    return function() {
         selectButton(navButtonId);
     }
 }

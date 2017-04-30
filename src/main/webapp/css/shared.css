@@ -18,6 +18,15 @@ body {
     font-family: Noto-Sans, sans-serif;
 }
 
+.body-div {
+    top: 45pt;
+    width: 100%;
+    overflow: auto;
+    display: block;
+    position: absolute;
+    height: calc(100% - 45pt);
+}
+
 /* Buttons */
 
 .button {

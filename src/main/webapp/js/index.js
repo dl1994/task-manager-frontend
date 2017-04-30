@@ -1,5 +1,5 @@
 function initialize() {
-    $.get(BACKEND_PATH + "/users/me", {}, function () {
+    $.get(BACKEND_PATH + "/users/me", {}, function() {
         window.location.href = ROUTES["projects"];
     });
 }
@@ -7,9 +7,9 @@ function initialize() {
 window.onload = initialize;
 
 function login() {
-    $.post(BACKEND_PATH + "/login", $("#login-form").serialize(), function () {
+    $.post(BACKEND_PATH + "/login", $("#login-form").serialize(), function() {
         window.location.href = ROUTES["projects"];
-    }).fail(function (response) {
+    }).fail(function(response) {
         if (response.status === 401) {
             var fields = $(".form-field");
 
@@ -22,6 +22,6 @@ function login() {
             }
 
             $("#error-message").show();
-        }
+        } // TODO handle other statuses
     });
 }
