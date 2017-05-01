@@ -13,8 +13,9 @@ html {
 
 body {
     margin: 0;
+    color: var(--body-text);
     height: 100%;
-    background: #F0F0F0;
+    background: var(--body-background);
     font-family: Noto-Sans, sans-serif;
 }
 
@@ -32,7 +33,7 @@ body {
 .button {
     padding: 7pt;
     display: inline-flex;
-    color: #FFFFFF;
+    color: var(--button-text);
     border: 1px solid;
     align-items: center;
 }
@@ -43,32 +44,31 @@ body {
 
 /* Button colors */
 
-.green-button {
-    background: linear-gradient(#43B743, #379637);
-    border-color: #297029;
+.success-button {
+    background: var(--success-button);
+    border-color: var(--success-button-border);
 }
 
-.green-button:hover {
-    background: linear-gradient(#379637, #43B743);
+.success-button:hover {
+    background: var(--success-button-hover);
 }
 
-.blue-button {
-    background: linear-gradient(#3A84D1, #3170AF);
-    border-color: #275B8E;
+.confirm-button {
+    background: var(--confirm-button);
+    border-color: var(--confirm-button-border);
 }
 
-.blue-button:hover {
-    background: linear-gradient(#3170AF, #3A84D1);
+.confirm-button:hover {
+    background: var(--confirm-button-hover);
 }
 
-.red-button {
-    background: linear-gradient(#D31017, #910B10);
-    border-color: #5B070B;
+.danger-button {
+    background: var(--danger-button);
+    border-color: var(--danger-button-border);
 }
 
-.red-button:hover {
-    background: linear-gradient(#910B10, #D31017);
-    border-color: #5B070B;
+.danger-button:hover {
+    background: var(--danger-button-hover);
 }
 
 /* Button sizes */

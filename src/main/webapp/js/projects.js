@@ -19,10 +19,10 @@ function fillUsersTable() {
     for (var i = 0; i < users.length; i++) {
         var user = users[i];
 
-        table.append('<tr class=' + (i % 2 === 0 ? '"light-row"' : '"dark-row"') + '>' +
+        table.append('<tr class=' + (i % 2 === 0 ? '"odd-row"' : '"even-row"') + '>' +
             '<td>' + user.firstName + ' ' + user.lastName + '</td>' +
             '<td>' +
-            '<button class="button red-button small-button" title="Delete task" ' +
+            '<button class="button danger-button small-button" title="Delete task" ' +
             'onclick="">' +
             '<img height="9" src="img/delete.svg"/>' +
             '</button>' +
@@ -112,7 +112,7 @@ function fillTaskTable(tableIdentifier, tasks, util) {
     for (var i = 0; i < tasks.length; i++) {
         var task = tasks[i];
 
-        table.append('<tr class=' + (i % 2 === 0 ? '"light-row"' : '"dark-row"') + '>' +
+        table.append('<tr class=' + (i % 2 === 0 ? '"odd-row"' : '"even-row"') + '>' +
             '<td>#' + task.id + '</td>' +
             '<td>' +
             '<div class="priority-div">' +
@@ -280,19 +280,19 @@ var inProgressTasksUtil = {
         return '<td>' + toDate(task.startedTimestamp) + '</td>' +
             '<td>' + toDate(task.dueTimestamp) + '</td>' +
             '<td>' +
-            '<button class="button green-button small-button" title="Mark as done">' +
+            '<button class="button success-button small-button" title="Mark as done">' +
             '<img height="12" src="img/done.svg"/>' +
             '</button> ' +
-            '<button class="button blue-button small-button" ' +
+            '<button class="button confirm-button small-button" ' +
             'title="Assign task" ' +
             'onclick="showAssignModalInProgress(' + taskIndex + ');">' +
             '<img height="12" src="img/take.svg"/>' +
             '</button> ' +
-            '<button class="button blue-button small-button" title="Edit task" ' +
+            '<button class="button confirm-button small-button" title="Edit task" ' +
             'onclick="showEditModalInProgress(' + taskIndex + ');">' +
             '<img height="12" src="img/edit.svg"/>' +
             '</button> ' +
-            '<button class="button red-button small-button" title="Delete task" ' +
+            '<button class="button danger-button small-button" title="Delete task" ' +
             'onclick="showDeleteModalInProgress(' + taskIndex + ');">' +
             '<img height="12" src="img/delete.svg"/>' +
             '</button>' +
@@ -307,18 +307,18 @@ var newTasksUtil = {
         return '<td>' + toDate(task.createdTimestamp) + '</td>' +
             '<td>' + toDate(task.dueTimestamp) + '</td>' +
             '<td>' +
-            '<button class="button green-button small-button" title="Start task">' +
+            '<button class="button success-button small-button" title="Start task">' +
             '<img height="12" src="img/start.svg"/>' +
             '</button> ' +
-            '<button class="button blue-button small-button" title="Assign task" ' +
+            '<button class="button confirm-button small-button" title="Assign task" ' +
             'onclick="showAssignModalNew(' + taskIndex + ');">' +
             '<img height="12" src="img/take.svg"/>' +
             '</button> ' +
-            '<button class="button blue-button small-button" title="Edit task" ' +
+            '<button class="button confirm-button small-button" title="Edit task" ' +
             'onclick="showEditModalNew(' + taskIndex + ');">' +
             '<img height="12" src="img/edit.svg"/>' +
             '</button> ' +
-            '<button class="button red-button small-button" title="Delete task" ' +
+            '<button class="button danger-button small-button" title="Delete task" ' +
             'onclick="showDeleteModalNew(' + taskIndex + ');">' +
             '<img height="12" src="img/delete.svg"/>' +
             '</button>' +
@@ -333,10 +333,10 @@ var doneTasksUtil = {
         return '<td>' + toDate(task.startedTimestamp) + '</td>' +
             '<td>' + toDate(task.finishedTimestamp) + '</td>' +
             '<td>' +
-            '<button class="button blue-button small-button" title="Restart task">' +
+            '<button class="button confirm-button small-button" title="Restart task">' +
             '<img height="12" src="img/restart.svg"/>' +
             '</button> ' +
-            '<button class="button red-button small-button" title="Delete task" ' +
+            '<button class="button danger-button small-button" title="Delete task" ' +
             'onclick="showDeleteModalDone(' + taskIndex + ');">' +
             '<img height="12" src="img/delete.svg"/>' +
             '</button>' +

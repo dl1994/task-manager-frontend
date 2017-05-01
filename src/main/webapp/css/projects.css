@@ -3,11 +3,11 @@
     margin: 5pt;
     padding: 10pt;
     font-family: Noto-Sans, sans-serif;
-    border: 1px solid gray;
+    border: 1px solid var(--form-border);
 }
 
 .form-error {
-    border: 1px solid #D31017;
+    border: 1px solid var(--form-error-border);
 }
 
 .form-button {
@@ -19,9 +19,8 @@
 }
 
 .body-table {
-    /*top: 45pt;*/
     width: 100%;
-    height: 100%;/*calc(100% - 45pt);*/
+    height: 100%;
     position: absolute;
     border-collapse: collapse;
 }
@@ -30,8 +29,8 @@
     width: 250pt;
     height: 100%;
     padding: 20pt 23pt 20pt 20pt;
-    border-right: 1pt solid gray;
-    background: #F8F8F8;
+    border-right: 1px solid var(--body-content-border);
+    background: var(--body-content-background);
 }
 
 .project-container {
@@ -41,46 +40,46 @@
 .project-tile {
     width: 100%;
     height: 40pt;
-    margin-top: -1pt;
+    margin-top: 5pt;
     line-height: 20pt;
     text-align: center;
     vertical-align: middle;
     display: inline-block;
-    border: 1px solid gray;
-    background: linear-gradient(#EEEEEE, #BBBBBB);
+    border: 1px solid var(--button-border);
+    background: var(--button);
 }
 
 .project-tile:hover {
     cursor: pointer;
-    background: linear-gradient(#43B743, #379637);
-    border-color: #297029;
+    background: var(--button-highlight);
+    border-color: var(--button-highlight-border);
 }
 
 .project-tile p {
-    color: #3F3F3F;
+    color: var(--project-button-text);
     font-size: 12pt;
     text-decoration: none;
 }
 
 .project-tile:hover p {
-    color: #FFFFFF;
+    color: var(--project-button-text-hover);
 }
 
 .selected-project-tile {
 @extend: . project-tile;
-    background: linear-gradient(#3A84D1, #3170AF);
-    border-color: #275B8E;
+    background: var(--button-selected);
+    border-color: var(--button-selected-border);
 }
 
 .selected-project-tile p {
-    color: #FFFFFF;
+    color: var(--project-button-text-hover);
 }
 
 .selected-project-tile:hover {
 @extend: . project-tile: hover;
     cursor: default;
-    background: linear-gradient(#3A84D1, #3170AF);
-    border-color: #275B8E;
+    background: var(--button-selected);
+    border-color: var(--button-selected-border);
 }
 
 .project-buttons {
@@ -92,7 +91,7 @@
 .project-panel {
     margin: 0;
     padding: 0 20pt 20pt;
-    background: #F8F8F8;
+    background: var(--body-content-background);
     position: relative;
 }
 
@@ -105,19 +104,19 @@
     display: inline-flex;
     position: absolute;
     align-items: center;
-    background: #BBBBBB;
+    background: var(--nothing-selected);
 }
 
 .no-selected-project-div div {
     width: 100%;
-    color: #909090;
+    color: var(--nothing-selected-text);
     text-align: center;
 }
 
 .project-navbar {
     height: 33pt;
     width: 100%;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--tab-border);
     overflow-y: visible;
 }
 
@@ -130,18 +129,18 @@
 .project-tab:hover {
     cursor: pointer;
     padding-bottom: 7pt;
-    border-bottom: 3pt solid #43B743;
+    border-bottom: 3pt solid var(--tab-highlight);
 }
 
 .selected-project-tab {
     padding: 10pt 10pt 7pt;
     display: inline-block;
-    border-bottom: 3pt solid #3170AF;
+    border-bottom: 3pt solid var(--tab-selected);
 }
 
 .tasks-table {
     width: 100%;
-    border: 1px solid gray;
+    border: 1px solid var(--table-border);
     border-collapse: collapse;
 }
 
@@ -151,11 +150,11 @@
 }
 
 .tasks-table th {
-    background: linear-gradient(#EEEEEE, #BBBBBB);
+    background: var(--table-header);
 }
 
 .users-table {
-    border: 1px solid gray;
+    border: 1px solid var(--table-border);
     border-collapse: collapse;
 }
 
@@ -165,39 +164,39 @@
 }
 
 .users-table th {
-    background: linear-gradient(#EEEEEE, #BBBBBB);
+    background: var(--table-header);
 }
 
-.light-row {
-    background: #F0F0F0;
+.odd-row {
+    background: var(--table-odd-row);
 }
 
-.light-row:hover {
-    background: #F5F5F5;
+.odd-row:hover {
+    background: var(--table-odd-row-hover);
 }
 
-.light-row .priority-div span {
-    border-color: #F0F0F0;
+.odd-row .priority-div span {
+    border-color: var(--table-odd-row);
 }
 
-.light-row:hover .priority-div span {
-    border-color: #F5F5F5;
+.odd-row:hover .priority-div span {
+    border-color: var(--table-odd-row-hover);
 }
 
-.dark-row {
-    background: #E5E5E5;
+.even-row {
+    background: var(--table-even-row);
 }
 
-.dark-row:hover {
-    background: #F5F5F5;
+.even-row:hover {
+    background: var(--table-even-row-hover);
 }
 
-.dark-row .priority-div span {
-    border-color: #E5E5E5;
+.even-row .priority-div span {
+    border-color: var(--table-even-row);
 }
 
-.dark-row:hover .priority-div span {
-    border-color: #F5F5F5;
+.even-row:hover .priority-div span {
+    border-color: var(--table-even-row-hover);
 }
 
 .task-buttons {
@@ -213,10 +212,10 @@
     width: 10pt;
     height: 10pt;
     display: inline-block;
-    background: #BBBBBB;
+    background: var(--task-priority-inactive);
     border: 1px solid;
 }
 
 .priority-div .activated-span {
-    background: #43B743;
+    background: var(--task-priority-active);
 }

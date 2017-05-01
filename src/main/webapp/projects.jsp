@@ -21,7 +21,7 @@
                             <div id="project-tiles">
                             </div>
                             <div class="project-buttons">
-                                <button class="button green-button large-button" style='width: 100%'
+                                <button class="button success-button large-button" style='width: 100%'
                                         onclick="showModal('#new-project-modal');">
                                     <img class="large-button-img" height="15" src="img/plus.svg" alt="New Project"/>New
                                                                                                                     Project
@@ -49,7 +49,7 @@
                                 <p id="project-description"></p>
                                 <h3>INVOLVED USERS</h3>
                                 <div class="task-buttons">
-                                    <button class="button green-button small-button">
+                                    <button class="button success-button small-button">
                                         <img class="small-button-img" height="9" src="img/plus.svg" alt="Add User"/>Add
                                                                                                                     User
                                     </button>
@@ -60,7 +60,7 @@
                             </div>
                             <div id="tasks-panel" hidden>
                                 <div class="task-buttons">
-                                    <button class="button green-button medium-button"
+                                    <button class="button success-button medium-button"
                                             onclick="showModal('#new-task-modal');">
                                         <img class="medium-button-img" height="12" src="img/plus.svg" alt="New Task"/>New
                                                                                                                       Task

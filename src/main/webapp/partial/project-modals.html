@@ -2,7 +2,7 @@
     <h1>New Project</h1>
     <form action="javascript:void(0);" onsubmit="">
         <input type="text" class="form-field" name="project" placeholder="Project Name"/><br/>
-        <input type="submit" class="button green-button medium-button form-button" value="Create Project"/>
+        <input type="submit" class="button success-button medium-button form-button" value="Create Project"/>
     </form>
 </div>
 <div id="new-task-modal">
@@ -11,7 +11,7 @@
         <input type="text" class="form-field" name="subject" placeholder="Subject"/><br/>
         <input type="text" class="form-field" name="due" placeholder="Due Date"/><br/>
         <input type="text" class="form-field" name="priority" placeholder="Priority"/><br/>
-        <input type="submit" class="button green-button medium-button form-button" value="Create Task"/>
+        <input type="submit" class="button success-button medium-button form-button" value="Create Task"/>
     </form>
 </div>
 <div id="assign-task-modal">
@@ -22,7 +22,7 @@
         <input class="form-field" title="User" name="user" list="assignable-users"/>
         <datalist id="assignable-users"></datalist>
         <br/>
-        <input type="submit" class="button blue-button medium-button form-button" value="Assign Task"/>
+        <input type="submit" class="button confirm-button medium-button form-button" value="Assign Task"/>
     </form>
 </div>
 <div id="edit-task-modal">
@@ -31,12 +31,12 @@
         <input id="task-subject" type="text" class="form-field" name="subject" placeholder="Subject"/><br/>
         <input id="task-due" type="text" class="form-field" name="due" placeholder="Due Date"/><br/>
         <input id="task-priority" type="text" class="form-field" name="priority" placeholder="Priority"/><br/>
-        <input type="submit" class="button blue-button medium-button form-button" value="Update Task"/>
+        <input type="submit" class="button confirm-button medium-button form-button" value="Update Task"/>
     </form>
 </div>
 <div id="delete-task-modal">
     <h1>Delete Task</h1>
     <h2>Are you sure you want do delete task:</h2>
     <h2 id="delete-task-name"></h2>
-    <input type="button" class="button red-button medium-button form-button" value="Delete Task"/>
+    <input type="button" class="button danger-button medium-button form-button" value="Delete Task"/>
 </div>

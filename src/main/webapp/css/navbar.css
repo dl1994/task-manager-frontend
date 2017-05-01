@@ -2,11 +2,11 @@
     position: absolute;
     height: calc(45pt - 6px);
     width: calc(100% - 6px);
-    color: white;
+    color: var(--navbar-text);
     font-size: 12pt;
     padding: 3px 3px 2px;
-    border-bottom: 1px solid black;
-    background: linear-gradient(#333333, #191919);
+    border-bottom: 1px solid var(--navbar-border);
+    background: var(--navbar);
 }
 
 .navbar-contents {
@@ -27,15 +27,15 @@
 
 .nav-button:hover {
     cursor: pointer;
-    background: linear-gradient(#43B743, #379637);
-    border-color: #297029;
+    background: var(--button-highlight);
+    border-color: var(--button-highlight-border);
 }
 
 .nav-button-selected {
     padding: 10pt;
     align-items: center;
-    background: linear-gradient(#3A84D1, #3170AF);
-    border-color: #275B8E;
+    background: var(--button-selected);
+    border-color: var(--button-selected-border);
 }
 
 .notifications-div {
@@ -47,21 +47,21 @@
     text-align: center;
     align-items: center;
     border-radius: 12pt;
-    background: linear-gradient(#090909, #222222);
+    background: var(--notifications-button);
 }
 
 .notifications-div:hover {
     cursor: pointer;
-    background: linear-gradient(#43B743, #379637);
+    background: var(--button-highlight);
 }
 
 .notifications-div-highlight {
-    background: linear-gradient(#BF0B11, #EE1017);
+    background: var(--notifications-present);
 }
 
 .notifications-div-highlight:hover {
     cursor: pointer;
-    background: linear-gradient(#EE1017, #BF0B11);
+    background: var(--notifications-present-highlight);
 }
 
 .notifications-panel {
@@ -70,13 +70,14 @@
     padding: 0;
     right: 85pt;
     width: 300pt;
+    color: var(--notifications-text);
     height: 60%;
     z-index: 1;
     overflow: auto;
-    background: white;
+    background: var(--notifications-background);
     position: absolute;
     align-items: center;
-    border: 1px solid gray;
+    border: 1px solid var(--notifications-border);
     border-top: none;
 }
 
@@ -87,13 +88,13 @@
 
 .notifications-table td {
     padding: 10pt;
-    background: #EEEEEE;
-    border-top: 1px solid gray;
+    background: var(--notification);
+    border-top: 1px solid var(--notification-border);
 }
 
 .notifications-table td:hover {
     cursor: pointer;
-    background: #DDDDDD;
+    background: var(--notification-highlight);
 }
 
 .logout-div {
@@ -103,6 +104,6 @@
 
 .logout-div:hover {
     cursor: pointer;
-    background: linear-gradient(#43B743, #379637);
-    border-color: #297029;
+    background: var(--button-highlight);
+    border-color: var(--button-highlight-border);
 }

@@ -9,7 +9,7 @@ div {
     margin: 5pt;
     padding: 10pt;
     font-family: Noto-Sans, sans-serif;
-    border: 1pt solid gray;
+    border: 1px solid gray;
 }
 
 .form-error {

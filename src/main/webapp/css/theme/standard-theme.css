@@ -1,0 +1,59 @@
+:root {
+    /* Navbar */
+    --navbar: linear-gradient(#333333, #191919);
+    --navbar-border: black;
+    --navbar-text: white;
+    --notifications-button: linear-gradient(#090909, #222222);
+    --button: linear-gradient(#EEEEEE, #BBBBBB);
+    --button-border: gray;
+    --button-highlight: linear-gradient(#43B743, #379637);
+    --button-highlight-border: #297029;
+    --button-selected: linear-gradient(#3A84D1, #3170AF);
+    --button-selected-border: #275B8E;
+    --tab-highlight: #43B743;
+    --tab-selected: #3170AF;
+    --tab-border: gray;
+    --notifications-present: linear-gradient(#BF0B11, #EE1017);
+    --notifications-present-highlight: linear-gradient(#EE1017, #BF0B11);
+    --notifications-background: white;
+    --notifications-border: gray;
+    --notifications-text: black;
+    --notification: #EEEEEE;
+    --notification-highlight: #DDDDDD;
+    --notification-border: gray;
+    /* General buttons */
+    --button-text: #FFFFFF;
+    --success-button: linear-gradient(#43B743, #379637);
+    --success-button-hover: linear-gradient(#379637, #43B743);
+    --success-button-border: #297029;
+    --confirm-button: linear-gradient(#3A84D1, #3170AF);
+    --confirm-button-hover: linear-gradient(#3170AF, #3A84D1);
+    --confirm-button-border: #275B8E;
+    --danger-button: linear-gradient(#D31017, #910B10);
+    --danger-button-hover: linear-gradient(#910B10, #D31017);
+    --danger-button-border: #5B070B;
+    /* Tables */
+    --table-header: linear-gradient(#EEEEEE, #BBBBBB);
+    --table-odd-row: #F0F0F0;
+    --table-odd-row-hover: #F5F5F5;
+    --table-even-row: #E5E5E5;
+    --table-even-row-hover: #F5F5F5;
+    --table-border: gray;
+    /* Modal */
+    --modal-shade: rgba(0, 0, 0, 0.5);
+    --modal-border: gray;
+    --modal-background: white;
+    /* Other */
+    --body-text: black;
+    --body-background: #F0F0F0;
+    --body-content-border: gray;
+    --body-content-background: #F8F8F8;
+    --task-priority-active: #43B743;
+    --task-priority-inactive: #BBBBBB;
+    --nothing-selected: #BBBBBB;
+    --nothing-selected-text: #909090;
+    --form-border: gray;
+    --form-error-border: #D31017;
+    --project-button-text: #3F3F3F;
+    --project-button-text-hover: white;
+}
