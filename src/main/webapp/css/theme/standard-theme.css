@@ -1,4 +1,4 @@
-:root {
+.standard-theme {
     /* Navbar */
     --navbar: linear-gradient(#333333, #191919);
     --navbar-border: black;

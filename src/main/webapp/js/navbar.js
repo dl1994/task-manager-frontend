@@ -8,6 +8,10 @@ var initializer = {
     successCallback: function() {}
 };
 
+function setWelcomeText() {
+    $("#user-login-text").text("Welcome, " + me.firstName + " " + me.lastName);
+}
+
 function initialize() {
     $.get(BACKEND_PATH + "/users/me", {}, function(data) {
         me = data;
@@ -16,7 +20,7 @@ function initialize() {
             $("#nav-administration").show();
         }
 
-        $("#user-login-text").text("Welcome, " + me.firstName + " " + me.lastName);
+        setWelcomeText();
         // TODO load notifications
         initializer.successCallback();
     }).fail(function(response) {

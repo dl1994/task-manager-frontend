@@ -19,6 +19,42 @@ body {
     font-family: Noto-Sans, sans-serif;
 }
 
+h1 {
+    margin: 0;
+    padding-top: 0.67em;
+    padding-bottom: 0.67em;
+}
+
+h2 {
+    margin: 0;
+    padding-top: 0.83em;
+    padding-bottom: 0.83em;
+}
+
+h3 {
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+h4 {
+    margin: 0;
+    padding-top: 1.33em;
+    padding-bottom: 1.33em;
+}
+
+h5 {
+    margin: 0;
+    padding-top: 1.67em;
+    padding-bottom: 1.67em;
+}
+
+h6 {
+    margin: 0;
+    padding-top: 2.33em;
+    padding-bottom: 2.33em;
+}
+
 .body-div {
     top: 45pt;
     width: 100%;
@@ -26,6 +62,7 @@ body {
     display: block;
     position: absolute;
     height: calc(100% - 45pt);
+    background: var(--body-content-background);
 }
 
 /* Buttons */
@@ -105,4 +142,25 @@ body {
 
 .right-pad-10 {
     padding-right: 10pt;
+}
+
+/* Forms */
+.form-field {
+    width: 150pt;
+    margin: 5pt;
+    padding: 10pt;
+    font-family: Noto-Sans, sans-serif;
+    border: 1px solid var(--form-border);
+}
+
+.form-error {
+    border: 1px solid var(--form-error-border);
+}
+
+.form-button {
+    margin: 5pt;
+    width: 150pt;
+    text-align: center;
+    display: inline-block;
+    border-radius: 0;
 }

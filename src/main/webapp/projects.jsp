@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="css/projects.css"/>
         <title>Projects</title>
     </head>
-    <body>
+    <body class="standard-theme">
         <%@ include file="partial/navbar.html" %>
         <div id="body-div" class="body-div">
             <%@ include file="partial/modal.html" %>

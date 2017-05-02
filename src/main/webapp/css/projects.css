@@ -1,27 +1,6 @@
-.form-field {
-    width: 150pt;
-    margin: 5pt;
-    padding: 10pt;
-    font-family: Noto-Sans, sans-serif;
-    border: 1px solid var(--form-border);
-}
-
-.form-error {
-    border: 1px solid var(--form-error-border);
-}
-
-.form-button {
-    margin: 5pt;
-    width: 150pt;
-    text-align: center;
-    display: inline-block;
-    border-radius: 0;
-}
-
 .body-table {
     width: 100%;
     height: 100%;
-    position: absolute;
     border-collapse: collapse;
 }
 
