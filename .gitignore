@@ -5,3 +5,6 @@
 # Maven files
 
 target
+
+# Generated sources
+src/main/webapp/js/src.js
