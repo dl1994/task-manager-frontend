@@ -32,8 +32,8 @@
 .editable-field:disabled {
     border: 1px solid transparent;
     font-weight: bold;
+    background: none;
     color: var(--body-text);
-    background: var(--body-content-background);
 }
 
 .editable-form-button:disabled {

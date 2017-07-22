@@ -1,0 +1,34 @@
+.message {
+    bottom: 0;
+    width: calc(100% - 10pt);
+    height: 25pt;
+    position: absolute;
+    padding-left: 5pt;
+    padding-right: 5pt;
+    line-height: 25pt;
+    color: var(--message-text);
+    border-top: 1px solid var(--message-border);
+    background: var(--message-background);
+}
+
+.message-text {
+    float: left;
+}
+
+.close-message {
+    float: right;
+}
+
+.close-message:hover {
+    cursor: pointer;
+    color: var(--message-dismiss-hover);
+}
+
+.error-message {
+    background: var(--message-error-background);
+    border-top: 1px solid var(--message-error-border);
+}
+
+.error-message > .message-text {
+    color: var(--message-error-text);
+}

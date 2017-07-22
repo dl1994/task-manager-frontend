@@ -68,17 +68,45 @@
     top: 45pt;
     margin: 0;
     padding: 0;
+    z-index: 1;
     right: 85pt;
     width: 300pt;
     color: var(--notifications-text);
-    height: 60%;
-    z-index: 1;
+    max-height: 60%;
     overflow: auto;
     background: var(--notifications-background);
     position: absolute;
     align-items: center;
     border: 1px solid var(--notifications-border);
     border-top: none;
+}
+
+.no-new-notifications {
+    margin: 0;
+    width: 100%;
+    height: 30vh;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    color: var(--notification-loading-text);
+    background: var(--notification);
+    border-top: 1px solid var(--notification-border);
+}
+
+.no-new-notifications div {
+    width: 100%;
+    text-align: center;
+}
+
+.notification-dismiss-button {
+    top: -5pt;
+    right: -5pt;
+    float: right;
+    position: relative;
+}
+
+.notification-dismiss-button:hover {
+    color: var(--notification-dismiss-hover);
 }
 
 .notifications-table {

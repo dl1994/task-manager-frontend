@@ -7,15 +7,17 @@
                     <div id="user-login-text" class="left-pad-10 right-pad-10"></div>
                     <div id="nav-projects" class="nav-button" onclick="goTo('projects');">Projects</div>
                     <div id="nav-settings" class="nav-button" onclick="goTo('settings');">Settings</div>
-                    <div id="nav-administration" class="nav-button"
-                         onclick="goTo('administration');" hidden>Administration
+                    <div id="nav-administration" class="nav-button" onclick="goTo('administration');" hidden>
+                        Administration
                     </div>
                 </div>
             </td>
             <td align="right">
                 <div class="navbar-contents">
                     <div class="right-pad-10">
-                        <div class="notifications-div" onclick="showNotifications();"><b>0</b></div>
+                        <div id="notifications-div" class="notifications-div" onclick="showNotifications();">
+                            <b id="notifications-count">?</b>
+                        </div>
                     </div>
                     <div class="logout-div" onclick="logout();">
                         <div class="right-pad-10">Logout</div>
@@ -29,32 +31,29 @@
 <div id="notifications" class="notifications-panel" hidden>
     <div>
         <h4 class="left-pad-10">NOTIFICATIONS</h4>
-        <table class="notifications-table">
-            <tr>
-                <td>user1 commented on task54</td>
-            </tr>
-            <tr>
-                <td>task553 assigned to you</td>
-            </tr>
-            <tr>
-                <td>user1 commented on task54</td>
-            </tr>
-            <tr>
-                <td>task553 assigned to you</td>
-            </tr>
-            <tr>
-                <td>user1 commented on task54</td>
-            </tr>
-            <tr>
-                <td>task553 assigned to you</td>
-            </tr>
-            <tr>
-                <td>notification with long long long long long long long long long long
-                    long long long long long long long long long long text
+        <div id="no-new-notifications" class="no-new-notifications">
+            <div>LOADING</div>
+        </div>
+        <table id="notifications-table" class="notifications-table" hidden>
+            <tr id="notification-1">
+                <td>
+                    <div class="notification-dismiss-button" onclick="dismissNotification(1);">&#x274c;</div>
+                    <div>user1 commented on task54</div>
                 </td>
             </tr>
-            <tr>
-                <td>task553 assigned to you</td>
+
+            <tr id="notification-2">
+                <td>
+                    <div class="notification-dismiss-button" onclick="dismissNotification(2);">&#x274c;</div>
+                    <div>user1 commented on task54</div>
+                </td>
+            </tr>
+
+            <tr id="notification-3">
+                <td>
+                    <div class="notification-dismiss-button" onclick="dismissNotification(3);">&#x274c;</div>
+                    <div>user1 commented on task54</div>
+                </td>
             </tr>
         </table>
     </div>

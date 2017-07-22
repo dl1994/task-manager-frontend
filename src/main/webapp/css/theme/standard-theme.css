@@ -21,6 +21,8 @@
     --notification: #EEEEEE;
     --notification-highlight: #DDDDDD;
     --notification-border: gray;
+    --notification-dismiss-hover: #EE1017;
+    --notification-loading-text: gray;
     /* General buttons */
     --button-text: #FFFFFF;
     --success-button: linear-gradient(#43B743, #379637);
@@ -43,6 +45,14 @@
     --modal-shade: rgba(0, 0, 0, 0.5);
     --modal-border: gray;
     --modal-background: white;
+    /* Message */
+    --message-background: white;
+    --message-border: gray;
+    --message-text: black;
+    --message-dismiss-hover: #EE1017;
+    --message-error-text: #EE1017;
+    --message-error-border: #EE1017;
+    --message-error-background: #FF9081;
     /* Other */
     --body-text: black;
     --body-background: #F0F0F0;
