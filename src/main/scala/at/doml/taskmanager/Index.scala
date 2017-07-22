@@ -10,10 +10,12 @@ import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 object Index {
 
     @JSExport
-    def init(): Unit = {
-        Users.me().onComplete { (_, status) =>
-            if (status == 200) {
-                window.location.href = Config.ROUTES("projects")
+    def initIndex(): Unit = {
+        window.onload = _ => {
+            Users.me().onComplete { (_, status) =>
+                if (status == 200) {
+                    window.location.href = Config.ROUTES("projects")
+                }
             }
         }
     }

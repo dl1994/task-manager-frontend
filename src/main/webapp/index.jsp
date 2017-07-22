@@ -7,7 +7,7 @@
         <script src="config.js" type="text/javascript"></script>
         <script src="js/src.js" type="text/javascript"></script>
         <script>
-            window.onload = Index.init;
+            Index.initIndex();
         </script>
         <link rel="stylesheet" type="text/css" href="css/theme/standard-theme.css"/>
         <link rel="stylesheet" type="text/css" href="css/shared.css"/>

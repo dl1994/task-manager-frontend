@@ -3,8 +3,10 @@
 <html>
     <head>
         <%@ include file="partial/head-includes.html" %>
-        <script src="js/modal.js" type="text/javascript"></script>
         <script src="js/projects.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            Modal.initModal();
+        </script>
         <link rel="stylesheet" type="text/css" href="css/modal.css"/>
         <link rel="stylesheet" type="text/css" href="css/projects.css"/>
         <title>Projects</title>
@@ -22,7 +24,7 @@
                             </div>
                             <div class="project-buttons">
                                 <button class="button success-button large-button" style='width: 100%'
-                                        onclick="showModal('#new-project-modal');">
+                                        onclick="Modal.show();">
                                     <img class="large-button-img" height="15" src="img/plus.svg" alt="New Project"/>New
                                                                                                                     Project
                                 </button>
@@ -61,7 +63,7 @@
                             <div id="tasks-panel" hidden>
                                 <div class="task-buttons">
                                     <button class="button success-button medium-button"
-                                            onclick="showModal('#new-task-modal');">
+                                            onclick="Modal.show();">
                                         <img class="medium-button-img" height="12" src="img/plus.svg" alt="New Task"/>New
                                                                                                                       Task
                                     </button>
