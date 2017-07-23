@@ -1,6 +1,6 @@
 package at.doml.taskmanager.backend
 
-import at.doml.taskmanager.Message
+import at.doml.taskmanager.components.Message
 import org.scalajs.dom.ext.AjaxException
 import scala.concurrent.{ExecutionContext, Future}
 

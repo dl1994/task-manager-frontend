@@ -1,4 +1,4 @@
-package at.doml.taskmanager
+package at.doml.taskmanager.components
 
 import org.scalajs.dom.document
 import scala.scalajs.js
@@ -10,7 +10,7 @@ object Modal {
     private lazy val modal = document.getElementById("modal")
 
     @JSExport
-    def initModal(): Unit = {
+    def init(): Unit = {
         document.addEventListener("DOMContentLoaded", useCapture = false, listener = (_: js.Any) => {
             modal.addEventListener("click", useCapture = false, listener = (_: js.Any) => this.hide())
 

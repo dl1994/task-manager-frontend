@@ -1,16 +1,17 @@
-package at.doml.taskmanager
+package at.doml.taskmanager.pages
 
+import at.doml.taskmanager.Config
 import at.doml.taskmanager.backend.controllers.{App, Users}
+import at.doml.taskmanager.components.{Message, Page}
 import org.scalajs.dom.raw.{Element, HTMLFormElement}
 import org.scalajs.dom.{document, window}
 import scala.scalajs.js.URIUtils
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
 @JSExportTopLevel("Index")
-object Index {
+object Index extends Page {
 
-    @JSExport
-    def initIndex(): Unit = {
+    override def init(): Unit = {
         window.onload = _ => {
             Users.me().onComplete { (_, status) =>
                 if (status == 200) {
@@ -28,24 +29,23 @@ object Index {
         val data = s"username=$username&password=$password"
 
         App.login(data).onComplete { (_, status) =>
-            status match {
-                case 200 => window.location.href = Config.ROUTES("projects")
-                case _ => {
-                    val fields = form.getElementsByClassName("form-field")
+            if (status == 200) {
+                window.location.href = Config.ROUTES("projects")
+            } else {
+                val fields = form.getElementsByClassName("form-field")
 
-                    for (index <- 0 until fields.length) {
-                        val field: Element = fields(index).asInstanceOf[Element]
+                for (index <- 0 until fields.length) {
+                    val field: Element = fields(index).asInstanceOf[Element]
 
-                        if (!field.classList.contains("form-error")) {
-                            field.classList.add("form-error")
-                        }
+                    if (!field.classList.contains("form-error")) {
+                        field.classList.add("form-error")
                     }
-
-                    this.resetFormField(form, "username")
-                    this.resetFormField(form, "password")
-
-                    Message.showError("Wrong username or password!")
                 }
+
+                this.resetFormField(form, "username")
+                this.resetFormField(form, "password")
+
+                Message.showError("Wrong username or password!")
             }
         }
     }

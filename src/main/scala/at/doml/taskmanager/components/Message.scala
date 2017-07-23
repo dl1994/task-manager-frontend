@@ -1,4 +1,4 @@
-package at.doml.taskmanager
+package at.doml.taskmanager.components
 
 import org.scalajs.dom.document
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}

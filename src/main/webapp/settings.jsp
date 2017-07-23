@@ -4,6 +4,9 @@
     <head>
         <%@ include file="partial/head-includes.html" %>
         <script src="js/settings.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            Settings.init()
+        </script>
         <link rel="stylesheet" type="text/css" href="css/settings.css"/>
         <title>Settings</title>
     </head>
@@ -15,16 +18,16 @@
                 <div class="header-with-button">
                     <h2 class="inline-header button-header">Personal Information</h2>
                     <button id="pi-edit" class="button confirm-button medium-button" title="Edit"
-                            onclick="editPersonalInformation();">
+                            onclick="Settings.editPersonalInformation();">
                         <img height="12" src="img/edit.svg" alt="Edit"/>
                     </button>
                     <button id="pi-edit-cancel" class="button danger-button medium-button"
-                            title="Cancel" onclick="cancelPersonalInformationEdit();" style="display: none;">
+                            title="Cancel" onclick="Settings.cancelPersonalInformationEdit();" style="display: none;">
                         <img height="12" src="img/delete.svg" alt="Cancel"/>
                     </button>
                 </div>
                 <form id="edit-personal-info-form" class="editable-form" action="javascript:void(0);"
-                      onsubmit="savePersonalInformation();" autocomplete="off">
+                      onsubmit="Settings.savePersonalInformation();" autocomplete="off">
                     <h4 class="inline-header">First Name:</h4>
                     <input type="text" class="form-field editable-field" name="firstName" placeholder="First Name"
                            value="" disabled/><br/>

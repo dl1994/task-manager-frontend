@@ -5,9 +5,9 @@
                 <div class="navbar-contents">
                     <div class="left-pad-10"><img height="16" src="../img/user.svg" alt="User"/></div>
                     <div id="user-login-text" class="left-pad-10 right-pad-10"></div>
-                    <div id="nav-projects" class="nav-button" onclick="goTo('projects');">Projects</div>
-                    <div id="nav-settings" class="nav-button" onclick="goTo('settings');">Settings</div>
-                    <div id="nav-administration" class="nav-button" onclick="goTo('administration');" hidden>
+                    <div id="nav-projects" class="nav-button" onclick="Navbar.goTo('projects');">Projects</div>
+                    <div id="nav-settings" class="nav-button" onclick="Navbar.goTo('settings');">Settings</div>
+                    <div id="nav-administration" class="nav-button" onclick="Navbar.goTo('administration');" hidden>
                         Administration
                     </div>
                 </div>
@@ -15,11 +15,11 @@
             <td align="right">
                 <div class="navbar-contents">
                     <div class="right-pad-10">
-                        <div id="notifications-div" class="notifications-div" onclick="showNotifications();">
+                        <div id="notifications-div" class="notifications-div" onclick="Navbar.showNotifications();">
                             <b id="notifications-count">?</b>
                         </div>
                     </div>
-                    <div class="logout-div" onclick="logout();">
+                    <div class="logout-div" onclick="Navbar.logout();">
                         <div class="right-pad-10">Logout</div>
                         <div><img height="16" src="../img/logout.svg" alt="Logout"/></div>
                     </div>
@@ -37,21 +37,21 @@
         <table id="notifications-table" class="notifications-table" hidden>
             <tr id="notification-1">
                 <td>
-                    <div class="notification-dismiss-button" onclick="dismissNotification(1);">&#x274c;</div>
+                    <div class="notification-dismiss-button" onclick="Navbar.dismissNotification(1);">&#x274c;</div>
                     <div>user1 commented on task54</div>
                 </td>
             </tr>
 
             <tr id="notification-2">
                 <td>
-                    <div class="notification-dismiss-button" onclick="dismissNotification(2);">&#x274c;</div>
+                    <div class="notification-dismiss-button" onclick="Navbar.dismissNotification(2);">&#x274c;</div>
                     <div>user1 commented on task54</div>
                 </td>
             </tr>
 
             <tr id="notification-3">
                 <td>
-                    <div class="notification-dismiss-button" onclick="dismissNotification(3);">&#x274c;</div>
+                    <div class="notification-dismiss-button" onclick="Navbar.dismissNotification(3);">&#x274c;</div>
                     <div>user1 commented on task54</div>
                 </td>
             </tr>

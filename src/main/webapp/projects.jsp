@@ -5,7 +5,7 @@
         <%@ include file="partial/head-includes.html" %>
         <script src="js/projects.js" type="text/javascript"></script>
         <script type="text/javascript">
-            Modal.initModal();
+            Modal.init();
         </script>
         <link rel="stylesheet" type="text/css" href="css/modal.css"/>
         <link rel="stylesheet" type="text/css" href="css/projects.css"/>
