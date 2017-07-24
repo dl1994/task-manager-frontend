@@ -7,14 +7,15 @@ import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 @JSExportTopLevel("Modal")
 object Modal {
 
-    private lazy val modal = document.getElementById("modal")
+    private lazy val rawModal = document.getElementById("modal")
+    private lazy val modal = new Element(rawModal)
 
     @JSExport
     def init(): Unit = {
         document.addEventListener("DOMContentLoaded", useCapture = false, listener = (_: js.Any) => {
-            modal.addEventListener("click", useCapture = false, listener = (_: js.Any) => this.hide())
+            rawModal.addEventListener("click", useCapture = false, listener = (_: js.Any) => this.hide())
 
-            val children = modal.children
+            val children = rawModal.children
 
             for (index <- 0 until children.length) {
                 children(index).addEventListener("click", useCapture = false, listener = (_: js.Any) => {})
@@ -24,11 +25,11 @@ object Modal {
 
     @JSExport
     def show(): Unit = {
-        modal.removeAttribute("hidden")
+        modal.show()
     }
 
     @JSExport
     def hide(): Unit = {
-        modal.setAttribute("hidden", "hidden")
+        modal.hide()
     }
 }

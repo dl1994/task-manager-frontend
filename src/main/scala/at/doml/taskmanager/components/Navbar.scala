@@ -11,13 +11,19 @@ import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 object Navbar {
 
     private var user: User = _
-    private var selectedButtonId: String = _
+    private var selectedButton: Element = _
+    private lazy val userLoginText = new Element("user-login-text")
+    private lazy val notifications = new Element("notifications")
+    private lazy val notificationsTable = new Table("notifications-table")
+    private lazy val noNewNotifications = new Element("no-new-notifications")
+    private lazy val notificationsCount = new Element("notifications-count")
+    private lazy val notificationsDiv = new Element("notifications-div")
 
     def me(): User = user
 
     def setMe(me: User): Unit = {
         this.user = me
-        document.getElementById("user-login-text").textContent = s"${me.firstName} ${me.lastName}"
+        userLoginText.text(s"${me.firstName} ${me.lastName}")
     }
 
     @JSExport
@@ -39,30 +45,16 @@ object Navbar {
 
     @JSExport
     def selectButton(buttonId: String): Unit = {
-        val oldButton = document.getElementById(selectedButtonId)
-
-        if (oldButton.classList.contains("nav-button-selected")) {
-            oldButton.classList.remove("nav-button-selected")
-            oldButton.classList.add("nav-button")
-        }
-
-        val newButton = document.getElementById(buttonId)
-
-        newButton.classList.add("nav-button-selected")
-        newButton.classList.remove("nav-button")
-
-        selectedButtonId = buttonId
+        selectedButton.removeClass("nav-button-selected")
+        selectedButton.addClass("nav-button")
+        selectedButton = new Element(buttonId)
+        selectedButton.addClass("nav-button-selected")
+        selectedButton.removeClass("nav-button")
     }
 
     @JSExport
     def showNotifications(): Unit = {
-        val notifications = document.getElementById("notifications")
-
-        if (notifications.hasAttribute("hidden")) {
-            notifications.removeAttribute("hidden")
-        } else {
-            notifications.setAttribute("hidden", "hidden")
-        }
+        notifications.toggle()
         // TODO load notifications
     }
 
@@ -74,11 +66,29 @@ object Navbar {
 
         notification.parentNode.removeChild(notification)
 
-        val table = document.getElementById("notifications-table")
+        if (notificationsTable.isEmpty()) {
+            notificationsTable.hide()
+            noNewNotifications.show()
+        }
+    }
 
-        if (table.getElementsByTagName("tr").length == 0) {
-            table.setAttribute("hidden", "hidden")
-            document.getElementById("no-new-notifications").removeAttribute("hidden")
+    private def showButtonsForCurrentUser(): Unit = {
+        if (user.role == UserRole.ROLE_ADMIN.toString) {
+            document.getElementById("nav-administration").removeAttribute("hidden")
+        }
+    }
+
+    private def setNotificationCount(): Unit = {
+        Notifications.unseenNotificationsCount().onComplete { (count, status) =>
+            if (status == 200) {
+                notificationsCount.text(count.toString)
+
+                if (count > 0) {
+                    notificationsDiv.addClass("notifications-div-highlight")
+                }
+            } else {
+                // TODO
+            }
         }
     }
 }
@@ -89,18 +99,15 @@ trait Navbar {
 
     final def init(): Unit = {
         window.onload = _ => {
-            Navbar.selectedButtonId = pageButtonId
+            Navbar.selectedButton = new Element(pageButtonId)
             Navbar.selectButton(pageButtonId)
             Users.me().onComplete { (user, status) =>
                 status match {
                     case 200 => {
-                        if (user.role == UserRole.ROLE_ADMIN.toString) {
-                            document.getElementById("nav-administration").removeAttribute("hidden")
-                        }
-
                         Navbar.setMe(user)
+                        Navbar.showButtonsForCurrentUser()
+                        Navbar.setNotificationCount()
 
-                        this.setNotificationCount()
                         this.onNavbarInitSuccess()
                     }
                     case 401 => window.location.href = Config.ROUTES("login")
@@ -113,18 +120,4 @@ trait Navbar {
     }
 
     def onNavbarInitSuccess(): Unit
-
-    private def setNotificationCount(): Unit = {
-        Notifications.unseenNotificationsCount().onComplete { (count, status) =>
-            if (status == 200) {
-                document.getElementById("notifications-count").textContent = count.toString
-
-                if (count > 0) {
-                    document.getElementById("notifications-div").classList.add("notifications-div-highlight")
-                }
-            } else {
-                // TODO
-            }
-        }
-    }
 }

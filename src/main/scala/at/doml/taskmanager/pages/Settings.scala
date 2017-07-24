@@ -2,67 +2,46 @@ package at.doml.taskmanager.pages
 
 import at.doml.taskmanager.backend.controllers.Users
 import at.doml.taskmanager.backend.models.req.UserReq
-import at.doml.taskmanager.components.{Navbar, Page}
-import org.scalajs.dom.document
-import org.scalajs.dom.raw.{Element, HTMLFormElement}
+import at.doml.taskmanager.components.{Element, Form, Navbar, Page}
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
 @JSExportTopLevel("Settings")
 object Settings extends Page with Navbar {
 
     override val pageButtonId: String = "nav-settings"
+    private lazy val personalInfoForm = new Form("edit-personal-info-form", List("firstName", "lastName"))
+    private lazy val editButton = new Element("pi-edit")
+    private lazy val cancelEditButton = new Element("pi-edit-cancel")
 
     override def onNavbarInitSuccess(): Unit = fillPersonalInfoForm()
 
     private def fillPersonalInfoForm(): Unit = {
-        val form = document.getElementById("edit-personal-info-form").asInstanceOf[HTMLFormElement]
-
-        this.setFormField(form, "firstName")(Navbar.me().firstName)
-        this.setFormField(form, "lastName")(Navbar.me().lastName)
-    }
-
-    private def setFormField(form: HTMLFormElement, field: String)(value: String): Unit = {
-        form(field).asInstanceOf[HTMLFormElement]("value") = value
+        personalInfoForm("firstName") = Navbar.me().firstName
+        personalInfoForm("lastName") = Navbar.me().lastName
     }
 
     @JSExport
     def editPersonalInformation(): Unit = {
-        document.getElementById("pi-edit").setAttribute("hidden", "hidden")
-        document.getElementById("pi-edit-cancel").removeAttribute("hidden")
-
-        val inputs = document.getElementById("edit-personal-info-form").getElementsByTagName("input")
-
-        for (index <- 0 until inputs.length) {
-            inputs(index).asInstanceOf[Element].removeAttribute("disabled")
-        }
+        editButton.noDisplay()
+        cancelEditButton.display()
+        personalInfoForm.enable()
     }
 
     @JSExport
     def cancelPersonalInformationEdit(): Unit = {
-        val inputs = document.getElementById("edit-personal-info-form").getElementsByTagName("input")
-
-        for (index <- 0 until inputs.length) {
-            inputs(index).asInstanceOf[Element].setAttribute("disabled", "disabled")
-        }
-
+        personalInfoForm.disable()
         this.fillPersonalInfoForm()
-
-        document.getElementById("pi-edit-cancel").setAttribute("hidden", "hidden")
-        document.getElementById("pi-edit").removeAttribute("hidden")
+        cancelEditButton.noDisplay()
+        editButton.display()
     }
 
     @JSExport
     def savePersonalInformation(): Unit = {
-        val form = document.getElementById("edit-personal-info-form").asInstanceOf[HTMLFormElement]
-        val inputs = form.getElementsByTagName("input")
+        personalInfoForm.disable()
 
-        for (index <- 0 until inputs.length) {
-            inputs(index).asInstanceOf[Element].setAttribute("disabled", "disabled")
-        }
-
-        val req = new UserReq(
-            firstName = getFormField(form, "firstName"),
-            lastName = getFormField(form, "lastName")
+        val req = new UserReq( // TODO
+            firstName = personalInfoForm("firstName"),
+            lastName = personalInfoForm("lastName")
         )
 
         Users.changeInfo(req).onComplete { (user, status) =>
@@ -74,9 +53,5 @@ object Settings extends Page with Navbar {
 
             this.cancelPersonalInformationEdit()
         }
-    }
-
-    private def getFormField(form: HTMLFormElement, field: String): String = {
-        form(field).asInstanceOf[HTMLFormElement]("value").asInstanceOf[String]
     }
 }
