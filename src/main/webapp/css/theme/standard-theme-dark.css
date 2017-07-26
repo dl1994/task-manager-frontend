@@ -36,10 +36,10 @@
     --danger-button-border: #5B070B;
     /* Tables */
     --table-header: linear-gradient(#353535, #494949);
-    --table-odd-row: #262626;
-    --table-odd-row-hover: #2B2B2B;
-    --table-even-row: #202020;
+    --table-even-row: #262626;
     --table-even-row-hover: #2B2B2B;
+    --table-odd-row: #202020;
+    --table-odd-row-hover: #2B2B2B;
     --table-border: black;
     /* Modal */
     --modal-shade: rgba(0, 0, 0, 0.5);

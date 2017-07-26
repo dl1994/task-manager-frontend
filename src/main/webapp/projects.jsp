@@ -3,8 +3,8 @@
 <html>
     <head>
         <%@ include file="partial/head-includes.html" %>
-        <script src="js/projects.js" type="text/javascript"></script>
         <script type="text/javascript">
+            Projects.init();
             Modal.init();
         </script>
         <link rel="stylesheet" type="text/css" href="css/modal.css"/>
@@ -39,10 +39,10 @@
                         </div>
                         <div id="selected-project" hidden>
                             <div class="project-navbar">
-                                <div id="overview-tab" class="selected-project-tab" onclick="showOverviewTab();">
+                                <div id="overview-tab" class="selected-project-tab" onclick="Projects.showOverviewTab();">
                                     Overview
                                 </div>
-                                <div id="tasks-tab" class="project-tab" onclick="showTasksTab();">
+                                <div id="tasks-tab" class="project-tab" onclick="Projects.showTasksTab();">
                                     Tasks
                                 </div>
                             </div>

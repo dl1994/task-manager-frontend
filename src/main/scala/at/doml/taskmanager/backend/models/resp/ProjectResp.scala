@@ -1,6 +1,5 @@
 package at.doml.taskmanager.backend.models.resp
 
-import at.doml.taskmanager.backend.models.ProjectStatus
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 
@@ -12,5 +11,5 @@ final class ProjectResp extends js.Object {
     val ownerId: Int = js.native
     val name: String = js.native
     val description: String = js.native
-    val status: ProjectStatus.Value = js.native
+    val status: String = js.native
 }

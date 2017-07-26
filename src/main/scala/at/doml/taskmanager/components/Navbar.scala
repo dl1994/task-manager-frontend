@@ -14,7 +14,11 @@ object Navbar {
     private var selectedButton: Element = _
     private lazy val userLoginText = new Element("user-login-text")
     private lazy val notifications = new Element("notifications")
-    private lazy val notificationsTable = new Table("notifications-table")
+    private lazy val notificationsTable = new Table("notifications-table") {
+        override val header: String = "" // TODO
+
+        override protected def fillRow(item: Nothing): String = ??? // TODO
+    }
     private lazy val noNewNotifications = new Element("no-new-notifications")
     private lazy val notificationsCount = new Element("notifications-count")
     private lazy val notificationsDiv = new Element("notifications-div")

@@ -9,6 +9,10 @@ class Element(element: dom.raw.Element) {
 
     def text(text: String): Unit = element.textContent = text
 
+    def empty(): Unit = element.innerHTML = ""
+
+    def append(html: String): Unit = element.innerHTML += html
+
     def setAttribute(name: String): Unit = {
         if (!element.hasAttribute(name)) {
             element.setAttribute(name, name)
@@ -20,6 +24,8 @@ class Element(element: dom.raw.Element) {
             element.classList.add(`class`)
         }
     }
+
+    def hasClass(`class`: String): Boolean = element.classList.contains(`class`)
 
     def removeClass(`class`: String): Unit = {
         element.classList.remove(`class`)

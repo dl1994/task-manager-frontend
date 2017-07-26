@@ -3,7 +3,6 @@
 <html>
     <head>
         <%@ include file="partial/head-includes.html" %>
-        <script src="js/settings.js" type="text/javascript"></script>
         <script type="text/javascript">
             Settings.init()
         </script>
