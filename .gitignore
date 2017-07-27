@@ -2,9 +2,10 @@
 .idea
 *.iml
 
-# Maven files
+# Compiled sources
 
-target
+target/
+project/project/
 
 # Generated sources
 src/main/webapp/js/src.js
